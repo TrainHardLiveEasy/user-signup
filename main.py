@@ -45,13 +45,13 @@ def validate_form():
     email_error=""
     if email != "":
         if email.count('.') > 1 or email.count('@') > 1:
-            email_error = 'The email is not valid'
+            email_error = 'The email is not valid.Check for ".","@",and unnecessary spaces.'
 
         if '@' not in email  or '.' not in email:
-            email_error = 'The email is not valid'
+            email_error = 'The email is not valid.Check for ".","@",and unnecessary spaces.'
 
         if " " in email:
-            email_error = 'The email is not valid'
+            email_error = 'The email is not valid.Check for ".","@",and unnecessary spaces.'
     
     if not username_error and not password_error and not verify_error and not email_error:
         return render_template('welcome.html', username=username)
